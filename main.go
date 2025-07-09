@@ -12,7 +12,7 @@ func main() {
 
 	m.HandleFunc("/", handlePage)
 
-	const port = 8010
+	const port = "8010"
 	srv := http.Server{
 		Handler: m,
 		Addr: ":" + port,
@@ -27,7 +27,7 @@ func main() {
 }
 
 func handlePage(w http.ResponseWriter, r *http.Request) {
-	w.Header().set("Content-Type", "text/html")
+	w.Header().Set("Content-Type", "text/html")
 	w.WriteHeader(200)
 	
 	const page = `<html>
